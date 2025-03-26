@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Data Fetcher</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* Light gray background for header */
+        }
+        /* Hide _id and created_at columns */
+        .hide-column {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>MIS Prototype</h1>
+    <form method="POST">
+        <label for="limit">Number of documents to fetch:</label>
+        <input type="number" id="limit" name="limit" value="10" min="1" max="100">
+        <br><br>
+        <button type="submit" name="action" value="next">Fetch Next Data</button>
+        <button type="submit" name="action" value="previous">Fetch Previous Data</button>
+    </form>
+
+    <h2>Fetched Data:</h2>
+    {% if entries %}
+        <table>
+            <thead>
+                <tr>
+                    {% set keys = entries[0].keys() | list %}
+                    {% for key in keys %}
+                        {% if key != '_id' and key != 'created_at' %}  <th>{{ key }}</th>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                    <tr>
+                        {% set values = entry.values() | list %}
+                        {% for value in values %}
+                            {% if loop.index0 != keys.index('_id') and loop.index0 != keys.index('created_at') %}  <td>{{ value }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data fetched or no data available.</p>
+    {% endif %}
+
+    <h2>Last Fetched ID:</h2>
+    <p>{{ last_fetched_id }}</p>
+</body>
+</html>
