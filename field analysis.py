@@ -2,9 +2,9 @@ from pymongo import MongoClient
 from collections import defaultdict
 import inflect
 
-MONGO_URI = "mongodb+srv://prod_read_access_user:LQFtkbsod9d9wuyk@elabsproduction.lagpo.mongodb.net/?retryWrites=true&w=majority&appName=ElabsProduction"
-DATABASE_NAME = "itclabs-prod"
-COLLECTION_NAME = "el_orders"
+MONGO_URI = "mongodb+srv://Paidii:Paidisetty%4010@cluster0.kfocv.mongodb.net/""
+DATABASE_NAME = "Dummy"
+COLLECTION_NAME = "dummy"
 
 client = MongoClient(MONGO_URI)
 db = client[DATABASE_NAME]
