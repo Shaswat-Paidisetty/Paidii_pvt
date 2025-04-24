@@ -1,9 +1,9 @@
 from pymongo import MongoClient
 
-MONGO_URI = "mongodb+srv://prod_read_access_user:LQFtkbsod9d9wuyk@elabsproduction.lagpo.mongodb.net/?retryWrites=true&w=majority&appName=ElabsProduction"
+MONGO_URI = ""mongodb+srv://Paidii:Paidisetty%4010@cluster0.kfocv.mongodb.net/""
 
-database1_name = "itclabs-prod"
-database2_name = "qualiteklab-bbsr-prod"
+database1_name = "Dummy"
+database2_name = "Dummy_1"
 
 client = MongoClient(MONGO_URI)
 
