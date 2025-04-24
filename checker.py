@@ -1,9 +1,9 @@
 from pymongo import MongoClient
 
 # MongoDB connection details
-MONGO_URI = "mongodb+srv://prod_read_access_user:LQFtkbsod9d9wuyk@elabsproduction.lagpo.mongodb.net/?retryWrites=true&w=majority&appName=ElabsProduction"
-DB_NAME = "itclabs-prod"
-COLLECTION_NAME = "el_orders"
+MONGO_URI = ""mongodb+srv://Paidii:Paidisetty%4010@cluster0.kfocv.mongodb.net/""
+DB_NAME = "Dummy"
+COLLECTION_NAME = "dummy"
 
 # Connect to MongoDB
 client = MongoClient(MONGO_URI)
